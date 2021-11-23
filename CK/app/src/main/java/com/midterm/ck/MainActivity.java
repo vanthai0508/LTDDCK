@@ -7,8 +7,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+//import com.google.firebase.auth.FirebaseAuth;
+//import com.google.firebase.auth.FirebaseUser;
 import com.midterm.ck.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
         binding.btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nextActivity();
+                //nextActivity();
+                Intent intent=new Intent(MainActivity.this,GDBOOK.class);
+                startActivity(intent);
             }
         });
 
@@ -50,17 +52,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void nextActivity() {
-        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-        if(user==null)
-        {
-            Intent intent=new Intent(MainActivity.this,CreateNewAccount.class);
-            startActivity(intent);
-        }
-        else {
-            Intent intent=new Intent(MainActivity.this,GDBOOK.class);
-            startActivity(intent);
-        }
-
-    }
+//    private void nextActivity() {
+//        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+//        if(user==null)
+//        {
+//            Intent intent=new Intent(MainActivity.this,CreateNewAccount.class);
+//            startActivity(intent);
+//        }
+//        else {
+//            Intent intent=new Intent(MainActivity.this,GDBOOK.class);
+//            startActivity(intent);
+//        }
+//
+//    }
 }

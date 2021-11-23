@@ -19,32 +19,13 @@ public class TCN extends AppCompatActivity {
 
 
         ActionBar actionBar = getSupportActionBar();
-
-        Drawable drawable= getResources().getDrawable(R.drawable.ic_launcher_background);
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId())
-        {
-            case android.R.id.home:
-                onBackPressed();
-                return  true;
-            case R.id.gd:
-                Intent intent=new Intent(TCN.this,GDBOOK.class);
-
-
-                setResult(RESULT_OK,intent);
-                startActivity(intent);
-                finish();
-                return   true;
-            default:break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menugd, menu);
-        return true;
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        startActivity(new Intent(TCN.this,GDBOOK.class));
+        return super.onOptionsItemSelected(item);
+
     }
 }
